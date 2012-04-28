@@ -36,11 +36,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hammock.ClientProfile">
-      <HintPath>..\packages\TweetSharp.2.1.5\lib\4.0\Hammock.ClientProfile.dll</HintPath>
+    <Reference Include="Budgie">
+      <HintPath>..\packages\Budgie.1.0.1\lib\net40-client\Budgie.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\TweetSharp.2.1.5\lib\4.0\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.4\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,9 +49,6 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TweetSharp">
-      <HintPath>..\packages\TweetSharp.2.1.5\lib\4.0\TweetSharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
