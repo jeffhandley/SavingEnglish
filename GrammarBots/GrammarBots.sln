@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwitterBot", "TwitterBot\TwitterBot.csproj", "{8896CC6A-0D16-485E-9CAB-275DB8953C1F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{89031141-7ADE-4EC6-AF45-5A15C7D5F9A7}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8896CC6A-0D16-485E-9CAB-275DB8953C1F}.Debug|x86.ActiveCfg = Debug|x86
+		{8896CC6A-0D16-485E-9CAB-275DB8953C1F}.Debug|x86.Build.0 = Debug|x86
+		{8896CC6A-0D16-485E-9CAB-275DB8953C1F}.Release|x86.ActiveCfg = Release|x86
+		{8896CC6A-0D16-485E-9CAB-275DB8953C1F}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
