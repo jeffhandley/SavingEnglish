@@ -112,9 +112,6 @@ namespace TwitterBot
                                         // Look beyond our own tweet
                                         lastTweet = r.Result.Result.Id;
 
-                                        // Follow the user we just corrected
-                                        service.FollowAsync(tweet.User.ScreenName);
-
                                         // Wait a bit before we correct anyone else
                                         System.Threading.Thread.Sleep(TimeSpan.FromMinutes(30));
                                     }
