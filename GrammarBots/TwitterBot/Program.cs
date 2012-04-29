@@ -20,10 +20,18 @@ namespace TwitterBot
 
         public static Mistake HaveCame = new Mistake
         {
-            TwitterSearch = @"""have came""",
-            RegexPattern = @"(.*\b)have came(\b.*)",
+            TwitterSearch = @"""have came"" OR ""had came""",
+            RegexPattern = @"(.*\b)(have|had) came(\b.*)",
             RegexReplace = null, // @"$1**have come**$2",
-            Explanation = @"It's **have come**, not **have came**, thanks! See http://www.english-test.net/forum/ftopic23316.html"
+            Explanation = @"It's **have/had come**, not **have/had came**, thanks! See http://www.english-test.net/forum/ftopic23316.html #SavingEnglish"
+        };
+
+        public static Mistake HaveRan = new Mistake
+        {
+            TwitterSearch = @"""have ran"" OR ""had ran""",
+            RegexPattern = @"(.*\b)(have|had) ran(\b.*)",
+            RegexReplace = null,
+            Explanation = @"It's **have/had run** not **have/had ran**, thanks! #SavingEnglish"
         };
 
         public static Mistake ALot = new Mistake
@@ -31,7 +39,7 @@ namespace TwitterBot
             TwitterSearch = @"""alot""",
             RegexPattern = @"(.*\b)alot(\b.*)",
             RegexReplace = null,
-            Explanation = @"It's **a lot**, not **alot**. ""Alot"" isn't a word. Thanks!"
+            Explanation = @"It's **a lot**, not **alot**. ""Alot"" isn't a word. Thanks! #SavingEnglish"
         };
 
         public static Mistake OfInsteadOfHave = new Mistake
@@ -39,7 +47,7 @@ namespace TwitterBot
             TwitterSearch = @"""should of"" OR ""would of"" OR ""could of"" OR ""might of"" OR ""must of""",
             RegexPattern = @"(?:^|\s+)(((c|sh|w)ould\s+)of)(?:(?:\s+[^c])|\.|$)",
             RegexReplace = null,
-            Explanation = @"Should have, would have, could have, might have, must have. Have, not of. Thanks!"
+            Explanation = @"Should have, would have, could have, might have, must have. Have, not of. Thanks! #SavingEnglish"
         };
 
         public static Mistake Definately = new Mistake
@@ -47,7 +55,7 @@ namespace TwitterBot
             TwitterSearch = "definately",
             RegexPattern = @"(?:^|\s+)(definately)(?:(?:\s+)|\.|$)",
             RegexReplace = null,
-            Explanation = @"It's not ""definately"", it's ""definitely"", with an ""i"" and no ""a"", thanks! See http://www.d-e-f-i-n-i-t-e-l-y.com."
+            Explanation = @"It's not ""definately"", it's ""definitely"", with an ""i"" and no ""a"", thanks! See http://www.d-e-f-i-n-i-t-e-l-y.com. #SavingEnglish"
         };
 
         static Mistake[] Mistakes = { HaveCame, ALot, OfInsteadOfHave, Definately };
