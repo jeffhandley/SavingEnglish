@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace TwitterBot
 {
@@ -21,7 +22,7 @@ namespace TwitterBot
         {
             TwitterSearch = @"""have came""",
             RegexPattern = @"(.*\b)have came(\b.*)",
-            RegexReplace = @"$1**have come**$2",
+            RegexReplace = null, // @"$1**have come**$2",
             Explanation = @"It's **have come**, not **have came**, thanks! See http://www.english-test.net/forum/ftopic23316.html"
         };
 
@@ -100,19 +101,26 @@ namespace TwitterBot
 
                                 service.ReplyToAsync(tweet.Id, reply).ContinueWith(r =>
                                 {
-                                    Console.WriteLine(tweet.CreatedAt.ToShortTimeString());
-                                    Console.WriteLine("@" + tweet.User.ScreenName + " " + tweet.Text);
-                                    Console.WriteLine("    " + reply);
-                                    Console.WriteLine(tweet.Id);
-                                    Console.WriteLine();
+                                    if (r.Result.StatusCode == System.Net.HttpStatusCode.OK)
+                                    {
+                                        Console.WriteLine(tweet.CreatedAt.ToShortTimeString());
+                                        Console.WriteLine("@" + tweet.User.ScreenName + " " + tweet.Text);
+                                        Console.WriteLine("    " + reply);
+                                        Console.WriteLine(tweet.Id);
+                                        Console.WriteLine();
 
-                                    // Look beyond our own tweet
-                                    lastTweet = r.Result.Result.Id;
-                                });
+                                        // Look beyond our own tweet
+                                        lastTweet = r.Result.Result.Id;
+
+                                        // Follow the user we just corrected
+                                        service.FollowAsync(tweet.User.ScreenName);
+
+                                        // Wait a bit before we correct anyone else
+                                        System.Threading.Thread.Sleep(TimeSpan.FromMinutes(30));
+                                    }
+                                }).Wait();
                             }
-                        });
-
-                        System.Threading.Thread.Sleep(TimeSpan.FromMinutes(30));
+                        }).Wait();
                     }
                 }
             }).Wait();
