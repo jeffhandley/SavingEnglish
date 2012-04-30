@@ -1,4 +1,3 @@
-Grammar_FTFY
+SavingEnglish
 ============
-
-I fix your grammar on twitter. Follow me at https://twitter.com/grammar_ftfy.
+I fix your spelling and grammar on twitter. Follow me at https://twitter.com/SavingEnglish.
